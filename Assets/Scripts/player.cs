@@ -23,7 +23,6 @@ public class player : MonoBehaviour
     {
         healthBar.rectTransform.localScale = new Vector3(health/maxHealth, 1, 1);
         healthText.text = $"{health}/{maxHealth}";
-        Debug.Log(health);
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         movement = movement.normalized;
