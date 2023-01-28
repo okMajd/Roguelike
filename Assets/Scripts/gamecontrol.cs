@@ -20,7 +20,8 @@ public class gamecontrol : MonoBehaviour
     public float minDelay, maxDelay;
 
     //spawning enemies
-    public GameObject enemyPre;
+    public List<GameObject> enemyTypes = new List<GameObject>();
+    public GameObject weakestEnemy, speedyEnemy, tankEnemy;
 
     public Transform corner1, corner2;
     private void Start()
@@ -58,12 +59,23 @@ public class gamecontrol : MonoBehaviour
     void beginWave()
     {
         wave++;
+        raiseDifficulty();
         waveText.text = $"Wave {wave}";
         timeLeft = 60;
         spawnedSoFar = 0;
-        maxEnemies = Mathf.Round(15 * Mathf.Pow(wave, 0.23f));
+        maxEnemies = Mathf.Round(15 * Mathf.Pow(wave, 0.4f));
         StartCoroutine("waveTimer");
         StartCoroutine("spawnEnemies");
+    }
+
+    void raiseDifficulty()
+    {
+        if(wave == 1 && enemyTypes.Count == 0)
+            enemyTypes.Add(weakestEnemy);
+        if(wave >= 2 && enemyTypes.Count < 2)
+            enemyTypes.Add(speedyEnemy);
+        if(wave >= 4 && enemyTypes.Count < 3)
+            enemyTypes.Add(tankEnemy);
     }
 
     void endWave()
@@ -85,7 +97,30 @@ public class gamecontrol : MonoBehaviour
         if(timeLeft > delay && spawnedSoFar < maxEnemies)
         {
             yield return new WaitForSeconds(delay);
-            GameObject enemy = Instantiate(enemyPre, generateLocation(), Quaternion.identity);
+            int length = enemyTypes.Count;
+            int enemySpawnType = 1;
+            switch (length)
+            {
+                case 1:
+                enemySpawnType = 0;
+                break;
+                case 2:
+                int chance = Random.Range(0, 100);
+                enemySpawnType = 1;
+                if(chance <= 60)
+                    enemySpawnType = 0;
+                break;
+                case 3:
+                int chance1 = Random.Range(0, 100);
+                enemySpawnType = 2;
+                if(chance1 <= 50)
+                    enemySpawnType = 0;
+                if(chance1 > 50 && chance1 <= 80)
+                    enemySpawnType = 1;
+                break;
+            }
+            
+            GameObject enemy = Instantiate(enemyTypes[enemySpawnType], generateLocation(), Quaternion.identity);
             enemyTracker.enemies.Add(enemy);
             spawnedSoFar++;
             StartCoroutine("spawnEnemies"); 
