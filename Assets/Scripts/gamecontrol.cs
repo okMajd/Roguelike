@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class gamecontrol : MonoBehaviour
 {
@@ -104,5 +105,10 @@ public class gamecontrol : MonoBehaviour
         }else{
             endWave();
         }
+    }
+
+    public void restart()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }

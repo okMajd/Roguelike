@@ -23,6 +23,8 @@ public class player : MonoBehaviour
 
     private void Update()
     {
+        if(health > maxHealth)
+            health = maxHealth;
         healthBar.rectTransform.localScale = new Vector3(health/maxHealth, 1, 1);
         healthText.text = $"{health}/{maxHealth}";
         movement.x = Input.GetAxisRaw("Horizontal");
