@@ -33,7 +33,7 @@ public class gamecontrol : MonoBehaviour
     private void Update()
     {
         timer.text = $"{timeLeft}";
-        if(enemyTracker.enemies.Count <=0 && !waiting)
+        if(enemyTracker.enemies.Count <=1 && !waiting)
         {
             waiting = true;
             StartCoroutine("checkDone");
@@ -42,8 +42,8 @@ public class gamecontrol : MonoBehaviour
 
     IEnumerator checkDone()
     {
-        yield return new WaitForSeconds(2f);
-        if(enemyTracker.enemies.Count <=0)
+        yield return new WaitForSeconds(3f);
+        if(enemyTracker.enemies.Count <=1)
         {
             Debug.Log("all killed");
             endWave();
@@ -59,7 +59,8 @@ public class gamecontrol : MonoBehaviour
         wave++;
         waveText.text = $"Wave {wave}";
         timeLeft = 60;
-        maxEnemies = 15 * Mathf.Pow(wave, 0.23f);
+        spawnedSoFar = 0;
+        maxEnemies = Mathf.Round(15 * Mathf.Pow(wave, 0.23f));
         StartCoroutine("waveTimer");
         StartCoroutine("spawnEnemies");
     }

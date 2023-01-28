@@ -6,7 +6,8 @@ using TMPro;
 
 public class player : MonoBehaviour
 {
-    public 
+    public GameObject deathCanvas;
+    public GameObject gameCanvas;
     float maxHealth = 100f;
     public float health = 100f;
     public float defaultMoveSpeed = 5f;
@@ -16,7 +17,8 @@ public class player : MonoBehaviour
     public TextMeshProUGUI healthText;
     Vector2 movement;
     Vector2 mousePos;
-
+    public enemyTracker enemyTracker;
+    public GameObject weaponHolder;
     public Camera cam;
 
     private void Update()
@@ -29,6 +31,23 @@ public class player : MonoBehaviour
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
+        if(health <= 0)
+        {
+            die();
+        }
+
+    }
+
+    void die()
+    {
+        for (int i = 0; i < enemyTracker.enemies.Count; i++)
+        {
+            enemyTracker.enemies[i].GetComponent<AIChase>().enabled = false;
+        }
+        weaponHolder.SetActive(false);
+        gameCanvas.SetActive(false);
+        deathCanvas.SetActive(true);
+        this.gameObject.GetComponent<player>().enabled = false;
     }
     private void FixedUpdate()
     {

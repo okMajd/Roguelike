@@ -22,6 +22,7 @@ public class weapon : MonoBehaviour
         findClosest();
         if(closestEnemy != null)
         {
+            findClosest();
             Vector2 dir = closestEnemy.transform.position - transform.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f;
             transform.rotation = Quaternion.Euler(0, 0, angle);
@@ -53,7 +54,7 @@ public class weapon : MonoBehaviour
 
     void findClosest()
     {
-        if(enemyHolder.enemies.Count > 0){
+        if(enemyHolder.enemies.Count > 1){
             float closestDistance = Vector2.Distance(enemyHolder.enemies[0].transform.position, transform.position);
             for (int i = 0; i < enemyHolder.enemies.Count; i++)
             {
@@ -62,8 +63,6 @@ public class weapon : MonoBehaviour
                 {
                     closestDistance = dis;
                     closestEnemy = enemyHolder.enemies[i];
-                }else{
-                    closestEnemy = enemyHolder.enemies[0];
                 }
             }
         }
