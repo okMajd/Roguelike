@@ -5,10 +5,10 @@ using UnityEngine;
 public class holder : MonoBehaviour
 {
     public List<GameObject> itemLocations = new List<GameObject>();
-    public GameObject[] items;
+    public List<GameObject> items = new List<GameObject>();
     private void Update()
     {
-        for (int i = 0; i < items.Length; i++)
+        for (int i = 0; i < items.Count; i++)
         {
             items[i].transform.position = itemLocations[i].transform.position;
         }

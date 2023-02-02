@@ -102,7 +102,7 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 2.5
   damage: 5
-  health: 85
+  health: 80
   apple: {fileID: 7060342238089437598, guid: bf089f4c8d392174c9b7bb3a581ab73d, type: 3}
   enemyTracker: {fileID: 0}
 --- !u!61 &7537779028258061635

@@ -22,12 +22,14 @@ public class gamecontrol : MonoBehaviour
     //spawning enemies
     public List<GameObject> enemyTypes = new List<GameObject>();
     public GameObject weakestEnemy, speedyEnemy, tankEnemy;
+    
+
+    //ignore
+    List<GameObject> enemiesStart = new List<GameObject>();
 
     public Transform corner1, corner2;
     private void Start()
     {
-        actualSpawnDelay = SpawnDelay;
-
         beginWave();
     }
 
@@ -70,6 +72,7 @@ public class gamecontrol : MonoBehaviour
 
     void raiseDifficulty()
     {
+        weakestEnemy.GetComponent<AIChase>().health *= 1.06f;
         if(wave == 1 && enemyTypes.Count == 0)
             enemyTypes.Add(weakestEnemy);
         if(wave >= 2 && enemyTypes.Count < 2)
