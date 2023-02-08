@@ -17,16 +17,19 @@ public class inventory : MonoBehaviour
             addItem(item);
         }
     }
-    public void addItem(GameObject item)
+    public void addItem(GameObject realItem)
     {
         for (int i = 0; i < slots.Length; i++)
         {
             if(!isFull[i])
             {
+                //aka copyItem!
+                GameObject item = Instantiate(realItem);
                 
                 isFull[i] = true;
                 weaponHolder.items.Add(item);
                 item.transform.parent = weaponHolder.transform;
+                slots[i].GetComponent<slot>().itemIndex = i;
                 slots[i].GetComponent<slot>().setItem(item);
                 break;
             }

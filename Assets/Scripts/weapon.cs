@@ -15,6 +15,10 @@ public class weapon : MonoBehaviour
     public float range = 5f;
 
     bool canShoot = true;
+    private void Start()
+    {
+        enemyHolder = GameObject.Find("EnemyHolder").GetComponent<enemyTracker>();
+    }
 
     // Update is called once per frame
     void Update()

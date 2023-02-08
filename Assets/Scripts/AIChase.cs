@@ -9,7 +9,7 @@ public class AIChase : MonoBehaviour
     private float distance;
     public float damage = 5f;
     public float health = 85f;
-    public GameObject apple;
+    public GameObject apple, lootbox;
 
     public enemyTracker enemyTracker;
     // Start is called before the first frame update
@@ -35,7 +35,10 @@ public class AIChase : MonoBehaviour
     void die()
     {
         float chance = Random.Range(0, 100);
-        if(chance < 35)
+        Debug.Log(chance);
+        if(chance <= 10)
+            Instantiate(lootbox, transform.position, Quaternion.Euler(0, 0, Random.Range(0, 360)));
+        if(chance > 10 && chance <= 45)
             Instantiate(apple, transform.position, Quaternion.identity);
         enemyTracker.enemies.Remove(this.gameObject);
         Destroy(this.gameObject);

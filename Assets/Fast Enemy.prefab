@@ -104,6 +104,7 @@ MonoBehaviour:
   damage: 17
   health: 40
   apple: {fileID: 7060342238089437598, guid: bf089f4c8d392174c9b7bb3a581ab73d, type: 3}
+  lootbox: {fileID: 3481331862715158724, guid: 0d8ffefd6e9a99848b83b9b5436addc3, type: 3}
   enemyTracker: {fileID: 0}
 --- !u!61 &2825037384463129501
 BoxCollider2D:
