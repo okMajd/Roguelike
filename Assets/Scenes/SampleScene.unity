@@ -1359,7 +1359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   designatedItem: {fileID: 0}
-  itemIndex: 0
+  itemIndex: 2
   realItem: {fileID: 0}
   slotLocation: {x: 0, y: 0}
   slotRotation: {x: 0, y: 0, z: 62.11}
@@ -2588,7 +2588,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   designatedItem: {fileID: 0}
-  itemIndex: 0
+  itemIndex: 3
   realItem: {fileID: 0}
   slotLocation: {x: 0, y: 0}
   slotRotation: {x: 0, y: 0, z: 62.11}
@@ -2722,7 +2722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   designatedItem: {fileID: 0}
-  itemIndex: 0
+  itemIndex: 5
   realItem: {fileID: 0}
   slotLocation: {x: 0, y: 0}
   slotRotation: {x: 0, y: 0, z: 62.11}
@@ -3064,8 +3064,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1287471704}
-        m_TargetAssemblyTypeName: gamecontrol, Assembly-CSharp
+      - m_Target: {fileID: 1521516742}
+        m_TargetAssemblyTypeName: buttonFunctions, Assembly-CSharp
         m_MethodName: restart
         m_Mode: 1
         m_Arguments:
@@ -5095,7 +5095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   designatedItem: {fileID: 0}
-  itemIndex: 0
+  itemIndex: 1
   realItem: {fileID: 0}
   slotLocation: {x: 0, y: 0}
   slotRotation: {x: 0, y: 0, z: 62.11}
@@ -5584,7 +5584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   designatedItem: {fileID: 0}
-  itemIndex: 0
+  itemIndex: 4
   realItem: {fileID: 0}
   slotLocation: {x: 0, y: 0}
   slotRotation: {x: 0, y: 0, z: 62.11}
