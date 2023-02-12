@@ -8,7 +8,8 @@ public class player : MonoBehaviour
 {
     public GameObject deathCanvas;
     public GameObject gameCanvas;
-    float maxHealth = 100f;
+    [HideInInspector]
+    public float maxHealth = 100f;
     public float health = 100f;
     public float defaultMoveSpeed = 5f;
     public float currentSpeed = 5f;
@@ -50,6 +51,7 @@ public class player : MonoBehaviour
         gameCanvas.SetActive(false);
         deathCanvas.SetActive(true);
         this.gameObject.GetComponent<player>().enabled = false;
+        Time.timeScale = 0;
     }
     private void FixedUpdate()
     {

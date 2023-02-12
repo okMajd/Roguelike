@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class weapon : MonoBehaviour
 {
+    public string gunName = "Gun Name";
     public enemyTracker enemyHolder;
     public GameObject closestEnemy;
 

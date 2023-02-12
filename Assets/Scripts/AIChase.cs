@@ -32,7 +32,7 @@ public class AIChase : MonoBehaviour
             die();
     }
 
-    void die()
+    public void die()
     {
         float chance = Random.Range(0, 100);
         Debug.Log(chance);

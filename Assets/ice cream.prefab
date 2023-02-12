@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d407d5e894f0da4699fd1c5b568bfc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunName: Ice Cream
   enemyHolder: {fileID: 0}
   closestEnemy: {fileID: 0}
   shotDelay: 0.25

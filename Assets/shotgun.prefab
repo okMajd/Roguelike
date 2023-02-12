@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d407d5e894f0da4699fd1c5b568bfc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunName: Shotgun
   enemyHolder: {fileID: 0}
   closestEnemy: {fileID: 0}
   shotDelay: 1
@@ -137,7 +138,7 @@ MonoBehaviour:
   bulletForce: 40
   bulletPre: {fileID: 4878485314098639256, guid: 70fd544ab0bf06840a702b819ae42771, type: 3}
   firePoint: {fileID: 2601744412401964935}
-  range: 5
+  range: 2
 --- !u!114 &2601744413197018817
 MonoBehaviour:
   m_ObjectHideFlags: 0
