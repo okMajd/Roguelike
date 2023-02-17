@@ -16,6 +16,7 @@ public class itemFunctions : MonoBehaviour
     public float timeInTimestop;
 
     public GameObject solver;
+    public holder inv;
 
     private void Update()
     {
@@ -65,6 +66,17 @@ public class itemFunctions : MonoBehaviour
             case "speed":
                 player.currentSpeed += speedAddition;
                 break;
+            case "damage":
+                dmgMult();
+                break;
+        }
+    }
+
+    void dmgMult()
+    {
+        foreach(GameObject weapon in inv.items)
+        {
+            weapon.GetComponent<weapon>().damage *= 1.15f;
         }
     }
 }

@@ -15,6 +15,7 @@ public class weapon : MonoBehaviour
     public Transform firePoint;
     public float range = 5f;
 
+
     bool canShoot = true;
     private void Start()
     {

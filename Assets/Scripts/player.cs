@@ -12,6 +12,7 @@ public class player : MonoBehaviour
     public float maxHealth = 100f;
     public float health = 100f;
     public float currentSpeed = 5f;
+    public float dmgMultiplier = 1f;
     public Rigidbody2D rb;
     public RawImage healthBar;
     public TextMeshProUGUI healthText;
@@ -50,7 +51,6 @@ public class player : MonoBehaviour
         gameCanvas.SetActive(false);
         deathCanvas.SetActive(true);
         this.gameObject.GetComponent<player>().enabled = false;
-        Time.timeScale = 0;
     }
     private void FixedUpdate()
     {
