@@ -12,6 +12,7 @@ public class slot : MonoBehaviour
     public inventory inventory;
     public int index;
     public holder weaponHolder;
+    public sfxHolder sfx;
     public void setItem(GameObject item)
     {
         designatedItem = item;
@@ -28,6 +29,7 @@ public class slot : MonoBehaviour
 
     public void destroyItem()
     {
+        sfx.garbage.Play();
         weaponHolder.items.Remove(designatedItem);
         Destroy(designatedItem);
         designatedItem = null;

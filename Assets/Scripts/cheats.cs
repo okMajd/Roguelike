@@ -7,6 +7,7 @@ public class cheats : MonoBehaviour
     public lootbox lootboxController;
     public player player;
     public enemyTracker enemyTracker;
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Z))
@@ -20,7 +21,7 @@ public class cheats : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.K))
         {
-            for (int i = 0; i > enemyTracker.enemies.Count; i++)
+            for (int i = 0; i < enemyTracker.enemies.Count; i++)
             {
                 enemyTracker.enemies[i].GetComponent<AIChase>().die();
             }
